@@ -1,0 +1,35 @@
+# Example ParamScout configuration file (TOML).
+# Pass it with:  paramscout scan --config paramsleuth.toml ...
+# Keys mirror the CLI options; explicit command-line values always win.
+
+[paramscout]
+
+# ---- Request controls (all per host) ---------------------------------
+rate = 0.1            # minimum seconds between requests to the same host
+concurrency = 2       # maximum in-flight requests per host
+timeout = 10.0        # per-request timeout, seconds
+retries = 1           # retries per request (count toward budgets)
+max_redirects = 5     # redirects followed (never off-scope)
+max_response_size = "5mb"
+
+# ---- Probing behavior (active mode) -----------------------------------
+batch_size = 1            # candidates per probe batch (1 = one per probe)
+baseline_requests = 3     # baseline responses per endpoint
+validation_retests = 1    # individual re-tests of promising candidates
+use_builtin_wordlist = true
+include_inconclusive = false
+
+# ---- Budgets ----------------------------------------------------------
+# max_requests = 300                 # global budget, incl. retries/redirects
+# max_requests_per_endpoint = 30     # default: 10% of the global budget
+# max_candidates_per_endpoint = 200
+
+# ---- Crawl (passive discovery) ----------------------------------------
+# depth = 1
+# max_pages = 50
+# extract_js = true
+# robots = false
+# sitemap = false
+
+# ---- Reporting ---------------------------------------------------------
+# endpoint_grouping = "path"   # or "host"

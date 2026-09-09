@@ -1,0 +1,13 @@
+# Sample "collected URLs" file for `paramscout extract --input ...`
+# One URL per line; blank lines and '#...' comments are ignored.
+# These use RFC 2606 reserved example domains - never request them.
+
+https://app.example.test/search?q=quartz&sort=score&debug=false
+https://app.example.test/search?q=rose-quartz&sort=newest
+https://app.example.test/docs/guide?id=42&print=true&lang=en
+https://app.example.test/api/v1/items?page=2&page_size=50&expand=meta
+https://app.example.test/api/v1/items?page=3&page_size=50
+https://app.example.test/account/profile?tab=security&view=full
+https://app.example.test/login?redirect=/account&callback=https://app.example.test/cb
+https://app.example.test/assets/app.js?cb=20260909
+https://app.example.test/download?id=file-1042&format=pdf

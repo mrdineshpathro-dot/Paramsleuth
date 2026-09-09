@@ -1,0 +1,25 @@
+# Example wordlist for `paramscout scan --active --wordlist ...`
+# One parameter name per line. Lines starting with '#' and blank lines are ignored.
+q
+debug
+next
+page
+sort
+redirect
+url
+uri
+callback
+file
+path
+id
+token
+session
+lang
+format
+view
+search
+query
+filter
+page_size
+include
+expand
