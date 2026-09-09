@@ -1,0 +1,87 @@
+# Example parameter wordlist for --active discovery.
+#
+#   paramscout scan --url https://app.example.test --scope-host app.example.test \
+#       --active --wordlist examples/parameters.txt
+#
+# A wordlist hit is the *weakest* evidence class ParamScout records. Every
+# candidate that comes only from a wordlist is labelled as a guess in the
+# report, is probed last (after target-specific evidence), and is omitted from
+# the findings list entirely when it produces no measurable change.
+#
+# One parameter name per line; '#' starts a comment.
+
+# --- redirect / navigation ---
+next
+redirect
+redirect_url
+redirect_uri
+return
+returnUrl
+continue
+goto
+destination
+target
+
+# --- resource identifiers ---
+id
+uid
+user_id
+account_id
+order_id
+document
+doc_id
+ref
+uuid
+
+# --- file / path references ---
+file
+filename
+path
+template
+view
+include
+attachment
+download
+
+# --- search / filtering ---
+q
+search
+query
+keyword
+filter
+sort
+sort_by
+category
+
+# --- remote-resource references ---
+url
+uri
+callback
+webhook
+proxy
+feed
+image_url
+
+# --- debug / configuration ---
+debug
+trace
+mode
+env
+verbose
+preview
+draft
+
+# --- pagination ---
+page
+offset
+limit
+per_page
+cursor
+
+# --- authentication / session ---
+token
+session
+code
+state
+otp
+signature

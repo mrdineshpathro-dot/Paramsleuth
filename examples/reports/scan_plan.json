@@ -1,0 +1,284 @@
+{
+  "tool": "ParamScout",
+  "version": "0.1.0",
+  "generated_at": "2026-09-09T17:17:14+00:00",
+  "mode": "dry-run",
+  "authorized_scope": {
+    "hosts": [
+      {
+        "host": "app.example.test",
+        "port": null,
+        "include_subdomains": false
+      }
+    ],
+    "allow_paths": [],
+    "deny_paths": [],
+    "include_subdomains": false,
+    "allow_private_networks": false,
+    "require_scope": true
+  },
+  "settings": {
+    "request": {
+      "rate": 1.0,
+      "rate_scope": "host",
+      "concurrency": 2,
+      "concurrency_scope": "host",
+      "global_rate": 5.0,
+      "global_concurrency": 4,
+      "timeout": 15.0,
+      "connect_timeout": 8.0,
+      "retries": 2,
+      "backoff_base": 0.8,
+      "backoff_max": 20.0,
+      "max_redirects": 5,
+      "max_response_bytes": 2000000,
+      "max_url_length": 2000,
+      "max_requests": 300,
+      "max_requests_per_endpoint": 40,
+      "throttle_status": [
+        429,
+        503
+      ],
+      "throttle_slowdown_factor": 2.0,
+      "throttle_slowdown_after": 2,
+      "throttle_stop_after": 6,
+      "proxy": null,
+      "verify_tls": true,
+      "user_agent": "ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)",
+      "headers": "[redacted]",
+      "cookies": "[redacted]"
+    },
+    "crawl": {
+      "depth": 2,
+      "max_pages": 100,
+      "max_js_files": 20,
+      "max_js_bytes": 500000,
+      "extract_js": true,
+      "fetch_external_js": true,
+      "fetch_robots": true,
+      "fetch_sitemap": true,
+      "allowed_content_types": [
+        "text/html",
+        "application/xhtml+xml"
+      ],
+      "follow_query_variants": false
+    },
+    "active": {
+      "enabled": true,
+      "wordlists": [
+        "examples/parameters.txt"
+      ],
+      "use_builtin_wordlist": true,
+      "baselines": 3,
+      "confirmations": 2,
+      "batch_size": 3,
+      "max_candidates_per_endpoint": 60,
+      "max_active_endpoints": 25,
+      "canary_prefix": "psc",
+      "excluded_paths": [
+        "^/logout",
+        "^/logoff",
+        "^/signout",
+        "^/sign-out",
+        "^/delete",
+        "^/remove",
+        "^/unsubscribe",
+        "^/cancel",
+        "^/confirm",
+        "^/verify-email",
+        "^/reset-password",
+        "^/password/reset",
+        "^/account/close",
+        "^/admin/",
+        "/delete$",
+        "/logout$",
+        "/unsubscribe$"
+      ],
+      "similarity_min_chars": 32,
+      "similarity_max_chars": 20000
+    },
+    "endpoint_grouping": "strict",
+    "dry_run": true
+  },
+  "stats": {
+    "requests_total": 0,
+    "requests_by_purpose": {},
+    "requests_by_status": {},
+    "retries": 0,
+    "throttle_events": [],
+    "skipped_off_scope": [],
+    "skipped_budget": 0,
+    "skipped_excluded": 0,
+    "transport_errors": 0,
+    "truncated_responses": 0,
+    "endpoints_seen": 0,
+    "candidates_total": 0,
+    "elapsed_seconds": 0.01,
+    "interrupted": false
+  },
+  "summary": {
+    "findings_total": 0,
+    "endpoints_total": 0,
+    "by_category": {},
+    "by_behavioral_status": {},
+    "reflected_canaries": 0,
+    "inconclusive": 0,
+    "top_priority": []
+  },
+  "endpoints": [],
+  "findings": [],
+  "limitations": [
+    "ParamScout is a reconnaissance aid, not a vulnerability scanner: no finding in this report is a vulnerability, and no severity is assigned.",
+    "Parameter categories are inferred from names only. A name never proves behaviour.",
+    "JavaScript and JSON extraction is heuristic; every such candidate carries the source context it was derived from so it can be confirmed or discarded by hand.",
+    "Passive discovery only sees parameters the target already exposes. Parameters that exist but are never referenced anywhere will be missed unless a wordlist probe finds them.",
+    "Active discovery uses GET requests only. Endpoints that accept parameters exclusively via POST/PUT/DELETE bodies are out of reach by design.",
+    "Active results are differential. If an endpoint's responses vary more than the measured baseline noise, results are reported as inconclusive rather than guessed at.",
+    "Reflection is reported separately from behavioural change. Reflection alone is not XSS and no injection testing is performed.",
+    "Endpoint grouping is configurable; folding paths (case or trailing slash) can merge endpoints that the application treats as distinct.",
+    "URLs differing only in percent-encoding or parameter order are treated as different inputs and are not de-duplicated."
+  ],
+  "warnings": [
+    "batch size 3: a change observed in a batch cannot be attributed to a single parameter, and a quiet batch does not prove that none of its members has an effect. Every batch hit is re-probed individually before it is reported.",
+    "Active discovery sends GET requests only, but GET endpoints can still have side effects (logging, cache poisoning, state changes on badly designed apps). Review --exclude-path before enabling --active."
+  ],
+  "plan": {
+    "stages": [
+      [
+        "scope",
+        "app.example.test"
+      ],
+      [
+        "seeds",
+        "15 in-scope URLs from --url/--input"
+      ],
+      [
+        "crawl",
+        "depth 2, max 100 pages"
+      ],
+      [
+        "robots/sitemap",
+        "robots=True sitemap=True"
+      ],
+      [
+        "javascript",
+        "extract=True external=True"
+      ],
+      [
+        "passive",
+        "extract parameters from URLs, forms, JS and JSON (no guessing)"
+      ],
+      [
+        "active",
+        "GET-only probing of 12 endpoints, batch size 3, 3 baselines, 2 confirmations per hit"
+      ],
+      [
+        "active/batch caveat",
+        "batch results cannot be attributed to a single parameter; every hit is re-probed alone"
+      ]
+    ],
+    "budget": {
+      "crawl requests (worst case)": 100,
+      "javascript fetches (worst case)": 20,
+      "robots + sitemap": 2,
+      "active requests (estimate)": 2164,
+      "estimated total": 2286,
+      "configured --max-requests": 300,
+      "per-endpoint cap": 40,
+      "fits in budget": "NO - raise --max-requests or narrow scope"
+    },
+    "endpoints": [
+      {
+        "endpoint": "https://app.example.test/",
+        "candidates": 60,
+        "candidates_from_evidence": 0,
+        "candidates_from_wordlist": 60,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/search",
+        "candidates": 60,
+        "candidates_from_evidence": 3,
+        "candidates_from_wordlist": 57,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/product",
+        "candidates": 60,
+        "candidates_from_evidence": 1,
+        "candidates_from_wordlist": 59,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/files/download",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/profile",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/account/orders",
+        "candidates": 60,
+        "candidates_from_evidence": 3,
+        "candidates_from_wordlist": 57,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/docs/view",
+        "candidates": 60,
+        "candidates_from_evidence": 1,
+        "candidates_from_wordlist": 59,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/redirect",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/api/export",
+        "candidates": 60,
+        "candidates_from_evidence": 3,
+        "candidates_from_wordlist": 57,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/legacy/index.asp",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/checkout/confirm",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      },
+      {
+        "endpoint": "https://app.example.test/api/v2/items",
+        "candidates": 60,
+        "candidates_from_evidence": 2,
+        "candidates_from_wordlist": 58,
+        "source": "supplied URL / input file"
+      }
+    ],
+    "rejected_seeds": []
+  },
+  "passive": {
+    "endpoints": 0,
+    "candidates": 0,
+    "forms": [],
+    "notes": []
+  }
+}
