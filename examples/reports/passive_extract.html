@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>ParamScout report - 2026-09-09T17:17:13+00:00</title>
+<style>
+:root { color-scheme: light dark; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+       margin: 0; padding: 2rem; background: #f7f8fa; color: #14181f; line-height: 1.5; }
+h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; border-bottom: 1px solid #d6dae1; padding-bottom: .25rem; }
+.sub { color: #5b6472; font-size: .9rem; margin-bottom: 1.5rem; }
+.card { background: #fff; border: 1px solid #e1e5eb; border-radius: 8px; padding: 1rem 1.25rem;
+        margin-bottom: 1rem; }
+table { border-collapse: collapse; width: 100%; font-size: .875rem; }
+th, td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid #e8ebf0; vertical-align: top; }
+th { background: #f0f2f6; font-weight: 600; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem; }
+pre { background: #0f1420; color: #e6e9ef; padding: .75rem; border-radius: 6px; overflow-x: auto;
+      white-space: pre-wrap; word-break: break-word; }
+.pill { display: inline-block; padding: .1rem .45rem; border-radius: 999px; font-size: .75rem;
+        border: 1px solid #cfd5de; background: #eef1f6; }
+.pill-high { background: #fdecec; border-color: #f3b6b6; }
+.pill-med { background: #fff5e5; border-color: #f0d3a1; }
+.pill-low { background: #eef4ff; border-color: #c3d5f7; }
+ul { margin: .35rem 0 .35rem 1.1rem; padding: 0; }
+details { margin-top: .5rem; }
+summary { cursor: pointer; color: #2a5bd7; font-size: .85rem; }
+.warn { background: #fff8e6; border-color: #ecd9a4; }
+.note { color: #5b6472; font-size: .85rem; }
+</style>
+</head>
+<body>
+<h1>ParamScout parameter discovery report</h1>
+<div class="sub">
+  Mode: <strong>extract-offline</strong> &middot;
+  Generated: 2026-09-09T17:17:13+00:00 &middot;
+  Version 0.1.0
+</div>
+
+<div class="card warn">
+  <strong>Authorized use only.</strong> This report describes <em>observed parameter behaviour</em>.
+  Nothing here is a confirmed vulnerability and no severity is assigned. Verify every item
+  manually, inside the scope you are authorized to test.
+</div>
+<div class="card warn"><strong>Warning:</strong> no scope configured: running fully offline, no network requests are possible in this mode</div>
+
+<h2>Scope</h2>
+<div class="card">
+  <p><strong>Allowed hosts:</strong> <em>none - no network requests were permitted</em></p>
+  <p><strong>Allowed paths:</strong> all</p>
+  <p><strong>Excluded paths:</strong> none</p>
+</div>
+
+<h2>Scan statistics</h2>
+<div class="card">
+  <table>
+    <tr><th>Requests sent</th><td>0</td></tr>
+    <tr><th>By purpose</th><td>{}</td></tr>
+    <tr><th>By status</th><td>{}</td></tr>
+    <tr><th>Retries</th><td>0</td></tr>
+    <tr><th>Throttling events</th><td>0</td></tr>
+    <tr><th>Off-scope URLs skipped</th><td>0</td></tr>
+    <tr><th>Requests skipped (budget/throttle)</th><td>0</td></tr>
+    <tr><th>Transport errors</th><td>0</td></tr>
+    <tr><th>Truncated responses</th><td>0</td></tr>
+    <tr><th>Elapsed seconds</th><td>0.004</td></tr>
+    <tr><th>Interrupted</th><td>no</td></tr>
+  </table>
+</div>
+
+<h2>Results at a glance</h2>
+<div class="card">
+  <p><strong>27</strong> parameter findings across
+     <strong>12</strong> endpoints &middot;
+     <strong>0</strong> reflected canaries &middot;
+     <strong>0</strong> inconclusive</p>
+  <table style="width:auto"><tr><th>Behavioural status</th><th>Count</th></tr><tr><td>not_tested</td><td>27</td></tr></table>
+  <table style="width:auto"><tr><th>Category</th><th>Count</th></tr><tr><td>resource_identifier</td><td>7</td></tr><tr><td>authentication_session</td><td>4</td></tr><tr><td>search_filtering</td><td>4</td></tr><tr><td>pagination</td><td>4</td></tr><tr><td>file_path_reference</td><td>3</td></tr><tr><td>unknown_general</td><td>3</td></tr><tr><td>redirect_navigation</td><td>1</td></tr><tr><td>debug_configuration</td><td>1</td></tr></table>
+</div>
+
+<h2>Findings</h2>
+<div class="card">
+  <table>
+    <tr>
+      <th>#</th><th>Parameter / endpoint</th><th>Category</th><th>Sources</th>
+      <th>Discovery</th><th>Behavioural status</th><th>Behavioural</th>
+      <th>Priority</th><th>Reflected</th><th>Attempts</th>
+    </tr>
+    
+    <tr>
+      <td>1</td>
+      <td><code>next</code><br>
+          <span class="note">https://app.example.test/redirect</span></td>
+      <td>redirect_navigation</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>42</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Redirect / navigation&#x27; naming weight 1.00 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;next&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/redirect?next=%2Fdashboard&amp;session=[REDACTED]</td><td>next=/dashboard</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /redirect HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code>path</code><br>
+          <span class="note">https://app.example.test/docs/view</span></td>
+      <td>file_path_reference</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;File / path reference&#x27; naming weight 0.90 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;path&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md</td><td>path=/private/notes.md</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /docs/view HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>file</code><br>
+          <span class="note">https://app.example.test/files/download</span></td>
+      <td>file_path_reference</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;File / path reference&#x27; naming weight 0.90 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;file&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/files/download?file=report-2024.pdf&amp;token=[REDACTED]</td><td>file=report-2024.pdf</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /files/download HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>theme</code><br>
+          <span class="note">https://app.example.test/profile</span></td>
+      <td>file_path_reference</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>41</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;File / path reference&#x27; naming weight 0.90 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;theme&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/profile?note=hello&amp;theme=dark</td><td>theme=dark</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /profile HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><code>user_id</code><br>
+          <span class="note">https://app.example.test/account/orders</span></td>
+      <td>resource_identifier</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;user_id&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/account/orders?user_id=88&amp;page=2&amp;per_page=25</td><td>user_id=88</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /account/orders HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><code>ID</code><br>
+          <span class="note">https://app.example.test/legacy/index.asp</span></td>
+      <td>resource_identifier</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;ID&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/legacy/index.asp?ID=7&amp;Category=books</td><td>ID=7</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /legacy/index.asp HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><code>id</code><br>
+          <span class="note">https://app.example.test/product</span></td>
+      <td>resource_identifier</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>40</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>2 independent observations</li><li>&#x27;id&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/product?id=1042</td><td>id=1042</td><td><code>supplied URL query string</code></td></tr><tr><td>url_query</td><td>https://app.example.test/product?id=</td><td>id=</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /product HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><code>token</code><br>
+          <span class="note">https://app.example.test/files/download</span></td>
+      <td>authentication_session</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>39</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Authentication / session&#x27; naming weight 0.70 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;token&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/files/download?file=report-2024.pdf&amp;token=[REDACTED]</td><td>token=[REDACTED]</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /files/download HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><code>session</code><br>
+          <span class="note">https://app.example.test/redirect</span></td>
+      <td>authentication_session</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>39</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Authentication / session&#x27; naming weight 0.70 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;session&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/redirect?next=%2Fdashboard&amp;session=[REDACTED]</td><td>session=[REDACTED]</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /redirect HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><code>debug</code><br>
+          <span class="note">https://app.example.test/api/export</span></td>
+      <td>debug_configuration</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Debug / configuration&#x27; naming weight 0.65 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;debug&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/api/export?format=csv&amp;columns=all&amp;debug=1</td><td>debug=1</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /api/export HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><code>tenant</code><br>
+          <span class="note">https://app.example.test/api/v2/items</span></td>
+      <td>resource_identifier</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;tenant&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/api/v2/items?cursor=abc&amp;tenant=acme</td><td>tenant=acme</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /api/v2/items HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><code>order_id</code><br>
+          <span class="note">https://app.example.test/checkout/confirm</span></td>
+      <td>resource_identifier</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>38</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;order_id&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/checkout/confirm?order_id=9001&amp;code=[REDACTED]</td><td>order_id=9001</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /checkout/confirm HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><code>code</code><br>
+          <span class="note">https://app.example.test/checkout/confirm</span></td>
+      <td>authentication_session</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>37</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Authentication / session&#x27; naming weight 0.70 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;code&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/checkout/confirm?order_id=9001&amp;code=[REDACTED]</td><td>code=[REDACTED]</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /checkout/confirm HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><code>code</code><br>
+          <span class="note">examples/collected_urls.txt</span></td>
+      <td>authentication_session</td>
+      <td>archive</td>
+      <td>0.4</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.40 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Authentication / session&#x27; naming weight 0.70 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>present in a user-supplied URL archive</li><li>combined provenance weight 0.40 = 0.40</li><li>&#x27;code&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>archive</td><td>examples/collected_urls.txt</td><td>query string in archived URL (line 27)</td><td><code>{&quot;url&quot;: &quot;https://app.example.test/checkout/confirm?order_id=9001&amp;code=[REDACTED]&quot;, &quot;status&quot;: 200}</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET examples/collected_urls.txt HTTP/1.1
+Host: 
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><code>order_id</code><br>
+          <span class="note">examples/collected_urls.txt</span></td>
+      <td>resource_identifier</td>
+      <td>archive</td>
+      <td>0.4</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.40 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>present in a user-supplied URL archive</li><li>combined provenance weight 0.40 = 0.40</li><li>&#x27;order_id&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>archive</td><td>examples/collected_urls.txt</td><td>query string in archived URL (line 27)</td><td><code>{&quot;url&quot;: &quot;https://app.example.test/checkout/confirm?order_id=9001&amp;code=[REDACTED]&quot;, &quot;status&quot;: 200}</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET examples/collected_urls.txt HTTP/1.1
+Host: 
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td><code>tenant</code><br>
+          <span class="note">examples/collected_urls.txt</span></td>
+      <td>resource_identifier</td>
+      <td>archive</td>
+      <td>0.4</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.40 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Resource identifier&#x27; naming weight 0.75 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>present in a user-supplied URL archive</li><li>combined provenance weight 0.40 = 0.40</li><li>&#x27;tenant&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>archive</td><td>examples/collected_urls.txt</td><td>query string in archived URL (line 28)</td><td><code>{&quot;url&quot;: &quot;https://app.example.test/api/v2/items?cursor=abc&amp;tenant=acme&quot;, &quot;status&quot;: 200}</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET examples/collected_urls.txt HTTP/1.1
+Host: 
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><code>Category</code><br>
+          <span class="note">https://app.example.test/legacy/index.asp</span></td>
+      <td>search_filtering</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Search / filtering&#x27; naming weight 0.40 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;Category&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/legacy/index.asp?ID=7&amp;Category=books</td><td>Category=books</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /legacy/index.asp HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td><code>filter</code><br>
+          <span class="note">https://app.example.test/search</span></td>
+      <td>search_filtering</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Search / filtering&#x27; naming weight 0.40 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;filter&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/search?q=&amp;filter=instock</td><td>filter=instock</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /search HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><code>q</code><br>
+          <span class="note">https://app.example.test/search</span></td>
+      <td>search_filtering</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Search / filtering&#x27; naming weight 0.40 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>4 independent observations</li><li>&#x27;q&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/search?q=widgets&amp;sort=asc</td><td>q=widgets</td><td><code>supplied URL query string</code></td></tr><tr><td>url_query</td><td>https://app.example.test/search?q=&amp;filter=instock</td><td>q=</td><td><code>supplied URL query string</code></td></tr><tr><td>url_query</td><td>https://app.example.test/search?q=widgets&amp;q=gadgets</td><td>q=widgets</td><td><code>supplied URL query string</code></td></tr><tr><td>url_query</td><td>https://app.example.test/search?q=widgets&amp;q=gadgets</td><td>q=gadgets</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /search HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td><code>sort</code><br>
+          <span class="note">https://app.example.test/search</span></td>
+      <td>search_filtering</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>35</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Search / filtering&#x27; naming weight 0.40 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;sort&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/search?q=widgets&amp;sort=asc</td><td>sort=asc</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /search HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td><code>columns</code><br>
+          <span class="note">https://app.example.test/api/export</span></td>
+      <td>unknown_general</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>34</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Unknown / general purpose&#x27; naming weight 0.25 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>parameter name carries no known intent signal</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;columns&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/api/export?format=csv&amp;columns=all&amp;debug=1</td><td>columns=all</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /api/export HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td><code>format</code><br>
+          <span class="note">https://app.example.test/api/export</span></td>
+      <td>unknown_general</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>34</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Unknown / general purpose&#x27; naming weight 0.25 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>parameter name carries no known intent signal</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;format&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/api/export?format=csv&amp;columns=all&amp;debug=1</td><td>format=csv</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /api/export HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td><code>note</code><br>
+          <span class="note">https://app.example.test/profile</span></td>
+      <td>unknown_general</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>34</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Unknown / general purpose&#x27; naming weight 0.25 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>parameter name carries no known intent signal</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;note&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/profile?note=hello&amp;theme=dark</td><td>note=hello</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /profile HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td><code>page</code><br>
+          <span class="note">https://app.example.test/account/orders</span></td>
+      <td>pagination</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>33</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Pagination&#x27; naming weight 0.20 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;page&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/account/orders?user_id=88&amp;page=2&amp;per_page=25</td><td>page=2</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /account/orders HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td><code>per_page</code><br>
+          <span class="note">https://app.example.test/account/orders</span></td>
+      <td>pagination</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>33</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.92 x weight 0.18</li><li>category &#x27;Pagination&#x27; naming weight 0.20 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;per_page&#x27; appears on 1 of 12 endpoints (rare)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/account/orders?user_id=88&amp;page=2&amp;per_page=25</td><td>per_page=25</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /account/orders HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td><code>cursor</code><br>
+          <span class="note">https://app.example.test/api/v2/items</span></td>
+      <td>pagination</td>
+      <td>url_query</td>
+      <td>0.5</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>31</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.50 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Pagination&#x27; naming weight 0.20 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>parameter observed in a real query string on this endpoint</li><li>combined provenance weight 0.50 = 0.50</li><li>&#x27;cursor&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>url_query</td><td>https://app.example.test/api/v2/items?cursor=abc&amp;tenant=acme</td><td>cursor=abc</td><td><code>supplied URL query string</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET /api/v2/items HTTP/1.1
+Host: app.example.test
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td><code>cursor</code><br>
+          <span class="note">examples/collected_urls.txt</span></td>
+      <td>pagination</td>
+      <td>archive</td>
+      <td>0.4</td>
+      <td><span class="pill">not_tested</span></td>
+      <td>0.0</td>
+      <td>29</td>
+      <td>no</td>
+      <td>0</td>
+    </tr>
+    <tr class="detail">
+      <td></td>
+      <td colspan="9">
+        <details>
+          <summary>observed differences, evidence and reproduction</summary>
+          <p><strong>Observed differences:</strong></p>
+          <ul><li>none</li></ul>
+          <p><strong>Why this priority:</strong></p><ul><li>discovery confidence 0.40 x weight 0.28</li><li>behavioral confidence 0.00 x weight 0.34</li><li>rarity 0.83 x weight 0.18</li><li>category &#x27;Pagination&#x27; naming weight 0.20 x weight 0.12</li><li>canary reflection no x weight 0.08</li><li>no repeatable behavioural change observed - this is a discovery, not a vulnerability</li><li>priority is a triage ordering only; it is not a vulnerability severity</li></ul>
+          <p><strong>Discovery reasoning:</strong></p><ul><li>present in a user-supplied URL archive</li><li>combined provenance weight 0.40 = 0.40</li><li>&#x27;cursor&#x27; appears on 2 of 12 endpoints (common)</li></ul>
+          <p><strong>Measurement notes:</strong></p><ul><li>none</li></ul>
+          
+          <p><strong>Provenance:</strong></p>
+          <table><tr><th>kind</th><th>origin</th><th>detail</th><th>context</th></tr><tr><td>archive</td><td>examples/collected_urls.txt</td><td>query string in archived URL (line 28)</td><td><code>{&quot;url&quot;: &quot;https://app.example.test/api/v2/items?cursor=abc&amp;tenant=acme&quot;, &quot;status&quot;: 200}</code></td></tr></table>
+          <p><strong>Sanitized reproduction request</strong>
+             <span class="note">(credentials removed; canary shown as a placeholder)</span></p>
+          <pre>GET examples/collected_urls.txt HTTP/1.1
+Host: 
+User-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)
+Accept: */*
+
+# Replay only against targets you are authorized to test.</pre>
+        </details>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<h2>Endpoints examined</h2>
+<div class="card">
+  <table>
+    <tr><th>Endpoint</th><th>Example URL</th><th>Candidates</th><th>Active validation</th></tr>
+    <tr><td><code>https://app.example.test/search</code></td><td>https://app.example.test/search?q=widgets&amp;sort=asc</td><td>3</td><td>not tested</td></tr><tr><td><code>https://app.example.test/product</code></td><td>https://app.example.test/product?id=1042</td><td>1</td><td>not tested</td></tr><tr><td><code>https://app.example.test/files/download</code></td><td>https://app.example.test/files/download?file=report-2024.pdf&amp;token=[REDACTED]</td><td>2</td><td>not tested</td></tr><tr><td><code>https://app.example.test/profile</code></td><td>https://app.example.test/profile?note=hello&amp;theme=dark</td><td>2</td><td>not tested</td></tr><tr><td><code>https://app.example.test/account/orders</code></td><td>https://app.example.test/account/orders?user_id=88&amp;page=2&amp;per_page=25</td><td>3</td><td>not tested</td></tr><tr><td><code>https://app.example.test/docs/view</code></td><td>https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md</td><td>1</td><td>not tested</td></tr><tr><td><code>https://app.example.test/redirect</code></td><td>https://app.example.test/redirect?next=%2Fdashboard&amp;session=[REDACTED]</td><td>2</td><td>not tested</td></tr><tr><td><code>https://app.example.test/api/export</code></td><td>https://app.example.test/api/export?format=csv&amp;columns=all&amp;debug=1</td><td>3</td><td>not tested</td></tr><tr><td><code>https://app.example.test/legacy/index.asp</code></td><td>https://app.example.test/legacy/index.asp?ID=7&amp;Category=books</td><td>2</td><td>not tested</td></tr><tr><td><code>https://app.example.test/</code></td><td>https://app.example.test/</td><td>0</td><td>not tested</td></tr><tr><td><code>https://app.example.test/checkout/confirm</code></td><td>https://app.example.test/checkout/confirm?order_id=9001&amp;code=[REDACTED]</td><td>2</td><td>not tested</td></tr><tr><td><code>https://app.example.test/api/v2/items</code></td><td>https://app.example.test/api/v2/items?cursor=abc&amp;tenant=acme</td><td>2</td><td>not tested</td></tr>
+  </table>
+</div>
+
+<h2>Limitations</h2>
+<div class="card"><ul><li>offline mode: only parameters already present in the supplied URLs/files were considered</li></ul></div>
+
+</body>
+</html>

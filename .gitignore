@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Environments / tooling caches
+.venv/
+venv/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Scan artefacts - never commit target data, state files or credentials
+*.sqlite
+*.sqlite3
+scan-state.*
+findings*.json
+report*.html
+out/
+reports/generated/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

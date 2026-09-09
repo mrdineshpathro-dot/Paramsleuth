@@ -1,0 +1,16 @@
+# Example scope file: one host per line.
+#
+#   paramscout scan --input targets.txt --scope-file examples/scope.txt --dry-run
+#
+# Rules:
+#   host              exact host match only
+#   .host  /  *.host  the host and its subdomains (dot-boundary suffix match,
+#                     never a substring match)
+#   host:port         host pinned to a specific port
+#
+# Only put hosts here that you are explicitly authorized to test. ParamScout
+# will not send a single request to anything that is not listed.
+
+app.example.test
+.example-cdn.test
+api.example.test:8443

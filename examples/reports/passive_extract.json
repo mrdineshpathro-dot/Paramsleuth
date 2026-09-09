@@ -1,0 +1,1562 @@
+{
+  "tool": "ParamScout",
+  "version": "0.1.0",
+  "generated_at": "2026-09-09T17:17:13+00:00",
+  "mode": "extract-offline",
+  "authorized_scope": {
+    "hosts": [],
+    "allow_paths": [],
+    "deny_paths": [],
+    "include_subdomains": false,
+    "allow_private_networks": false,
+    "require_scope": true
+  },
+  "settings": {
+    "request": {
+      "rate": 2.0,
+      "rate_scope": "host",
+      "concurrency": 2,
+      "concurrency_scope": "host",
+      "global_rate": 5.0,
+      "global_concurrency": 4,
+      "timeout": 15.0,
+      "connect_timeout": 8.0,
+      "retries": 2,
+      "backoff_base": 0.8,
+      "backoff_max": 20.0,
+      "max_redirects": 5,
+      "max_response_bytes": 2000000,
+      "max_url_length": 2000,
+      "max_requests": 500,
+      "max_requests_per_endpoint": 40,
+      "throttle_status": [
+        429,
+        503
+      ],
+      "throttle_slowdown_factor": 2.0,
+      "throttle_slowdown_after": 2,
+      "throttle_stop_after": 6,
+      "proxy": null,
+      "verify_tls": true,
+      "user_agent": "ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)",
+      "headers": "[redacted]",
+      "cookies": "[redacted]"
+    },
+    "crawl": {
+      "depth": 2,
+      "max_pages": 100,
+      "max_js_files": 20,
+      "max_js_bytes": 500000,
+      "extract_js": true,
+      "fetch_external_js": true,
+      "fetch_robots": true,
+      "fetch_sitemap": true,
+      "allowed_content_types": [
+        "text/html",
+        "application/xhtml+xml"
+      ],
+      "follow_query_variants": false
+    },
+    "active": {
+      "enabled": false,
+      "wordlists": [],
+      "use_builtin_wordlist": true,
+      "baselines": 3,
+      "confirmations": 2,
+      "batch_size": 1,
+      "max_candidates_per_endpoint": 60,
+      "max_active_endpoints": 25,
+      "canary_prefix": "psc",
+      "excluded_paths": [
+        "^/logout",
+        "^/logoff",
+        "^/signout",
+        "^/sign-out",
+        "^/delete",
+        "^/remove",
+        "^/unsubscribe",
+        "^/cancel",
+        "^/confirm",
+        "^/verify-email",
+        "^/reset-password",
+        "^/password/reset",
+        "^/account/close",
+        "^/admin/",
+        "/delete$",
+        "/logout$",
+        "/unsubscribe$"
+      ],
+      "similarity_min_chars": 32,
+      "similarity_max_chars": 20000
+    },
+    "endpoint_grouping": "strict",
+    "dry_run": false
+  },
+  "stats": {
+    "requests_total": 0,
+    "requests_by_purpose": {},
+    "requests_by_status": {},
+    "retries": 0,
+    "throttle_events": [],
+    "skipped_off_scope": [],
+    "skipped_budget": 0,
+    "skipped_excluded": 0,
+    "transport_errors": 0,
+    "truncated_responses": 0,
+    "endpoints_seen": 0,
+    "candidates_total": 0,
+    "elapsed_seconds": 0.004,
+    "interrupted": false
+  },
+  "summary": {
+    "findings_total": 27,
+    "endpoints_total": 12,
+    "by_category": {
+      "resource_identifier": 7,
+      "authentication_session": 4,
+      "search_filtering": 4,
+      "pagination": 4,
+      "file_path_reference": 3,
+      "unknown_general": 3,
+      "redirect_navigation": 1,
+      "debug_configuration": 1
+    },
+    "by_behavioral_status": {
+      "not_tested": 27
+    },
+    "reflected_canaries": 0,
+    "inconclusive": 0,
+    "top_priority": [
+      {
+        "endpoint": "https://app.example.test/redirect",
+        "parameter": "next",
+        "priority": 42
+      },
+      {
+        "endpoint": "https://app.example.test/docs/view",
+        "parameter": "path",
+        "priority": 41
+      },
+      {
+        "endpoint": "https://app.example.test/files/download",
+        "parameter": "file",
+        "priority": 41
+      },
+      {
+        "endpoint": "https://app.example.test/profile",
+        "parameter": "theme",
+        "priority": 41
+      },
+      {
+        "endpoint": "https://app.example.test/account/orders",
+        "parameter": "user_id",
+        "priority": 40
+      },
+      {
+        "endpoint": "https://app.example.test/legacy/index.asp",
+        "parameter": "ID",
+        "priority": 40
+      },
+      {
+        "endpoint": "https://app.example.test/product",
+        "parameter": "id",
+        "priority": 40
+      },
+      {
+        "endpoint": "https://app.example.test/files/download",
+        "parameter": "token",
+        "priority": 39
+      },
+      {
+        "endpoint": "https://app.example.test/redirect",
+        "parameter": "session",
+        "priority": 39
+      },
+      {
+        "endpoint": "https://app.example.test/api/export",
+        "parameter": "debug",
+        "priority": 38
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "endpoint": "https://app.example.test/search",
+      "example_url": "https://app.example.test/search?q=widgets&sort=asc",
+      "candidates": 3,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/product",
+      "example_url": "https://app.example.test/product?id=1042",
+      "candidates": 1,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/files/download",
+      "example_url": "https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/profile",
+      "example_url": "https://app.example.test/profile?note=hello&theme=dark",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/account/orders",
+      "example_url": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25",
+      "candidates": 3,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/docs/view",
+      "example_url": "https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md",
+      "candidates": 1,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/redirect",
+      "example_url": "https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/api/export",
+      "example_url": "https://app.example.test/api/export?format=csv&columns=all&debug=1",
+      "candidates": 3,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/legacy/index.asp",
+      "example_url": "https://app.example.test/legacy/index.asp?ID=7&Category=books",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/",
+      "example_url": "https://app.example.test/",
+      "candidates": 0,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/checkout/confirm",
+      "example_url": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    },
+    {
+      "endpoint": "https://app.example.test/api/v2/items",
+      "example_url": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme",
+      "candidates": 2,
+      "active_status": "not tested",
+      "active": null
+    }
+  ],
+  "findings": [
+    {
+      "endpoint": "https://app.example.test/redirect",
+      "parameter": "next",
+      "category": "redirect_navigation",
+      "category_reason": "exact name match 'next'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]",
+          "detail": "next=/dashboard",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'next' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 42,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Redirect / navigation' naming weight 1.00 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "/dashboard"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /redirect HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/docs/view",
+      "parameter": "path",
+      "category": "file_path_reference",
+      "category_reason": "exact name match 'path'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md",
+          "detail": "path=/private/notes.md",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'path' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 41,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'File / path reference' naming weight 0.90 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "/private/notes.md"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /docs/view HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/files/download",
+      "parameter": "file",
+      "category": "file_path_reference",
+      "category_reason": "exact name match 'file'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]",
+          "detail": "file=report-2024.pdf",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'file' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 41,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'File / path reference' naming weight 0.90 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "report-2024.pdf"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /files/download HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/profile",
+      "parameter": "theme",
+      "category": "file_path_reference",
+      "category_reason": "exact name match 'theme'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/profile?note=hello&theme=dark",
+          "detail": "theme=dark",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/profile?note=hello&theme=dark"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'theme' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 41,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'File / path reference' naming weight 0.90 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "dark"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /profile HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/account/orders",
+      "parameter": "user_id",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'user_id'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25",
+          "detail": "user_id=88",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'user_id' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 40,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "88"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /account/orders HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/legacy/index.asp",
+      "parameter": "ID",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'ID'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/legacy/index.asp?ID=7&Category=books",
+          "detail": "ID=7",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/legacy/index.asp?ID=7&Category=books"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'ID' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 40,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "7"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /legacy/index.asp HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/product",
+      "parameter": "id",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'id'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/product?id=1042",
+          "detail": "id=1042",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/product?id=1042"
+        },
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/product?id=",
+          "detail": "id=",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/product?id="
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "2 independent observations",
+        "'id' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 40,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "1042",
+        ""
+      ],
+      "form_methods": [],
+      "reproduction": "GET /product HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/files/download",
+      "parameter": "token",
+      "category": "authentication_session",
+      "category_reason": "exact name match 'token'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]",
+          "detail": "token=[REDACTED]",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'token' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 39,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Authentication / session' naming weight 0.70 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "[REDACTED]"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /files/download HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/redirect",
+      "parameter": "session",
+      "category": "authentication_session",
+      "category_reason": "exact name match 'session'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]",
+          "detail": "session=[REDACTED]",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'session' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 39,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Authentication / session' naming weight 0.70 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "[REDACTED]"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /redirect HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/api/export",
+      "parameter": "debug",
+      "category": "debug_configuration",
+      "category_reason": "exact name match 'debug'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/api/export?format=csv&columns=all&debug=1",
+          "detail": "debug=1",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/api/export?format=csv&columns=all&debug=1"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'debug' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 38,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Debug / configuration' naming weight 0.65 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "1"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /api/export HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/api/v2/items",
+      "parameter": "tenant",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'tenant'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme",
+          "detail": "tenant=acme",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'tenant' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 38,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "acme"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /api/v2/items HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/checkout/confirm",
+      "parameter": "order_id",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'order_id'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]",
+          "detail": "order_id=9001",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'order_id' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 38,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "9001"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /checkout/confirm HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/checkout/confirm",
+      "parameter": "code",
+      "category": "authentication_session",
+      "category_reason": "exact name match 'code'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]",
+          "detail": "code=[REDACTED]",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'code' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 37,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Authentication / session' naming weight 0.70 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "[REDACTED]"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /checkout/confirm HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "examples/collected_urls.txt",
+      "parameter": "code",
+      "category": "authentication_session",
+      "category_reason": "exact name match 'code'",
+      "sources": [
+        "archive"
+      ],
+      "evidence": [
+        {
+          "kind": "archive",
+          "origin": "examples/collected_urls.txt",
+          "detail": "query string in archived URL (line 27)",
+          "context": "{\"url\": \"https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]\", \"status\": 200}",
+          "line": null,
+          "confidence": 0.85,
+          "target": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.4,
+      "discovery_reasons": [
+        "present in a user-supplied URL archive",
+        "combined provenance weight 0.40 = 0.40",
+        "'code' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.40 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Authentication / session' naming weight 0.70 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [],
+      "form_methods": [],
+      "reproduction": "GET examples/collected_urls.txt HTTP/1.1\nHost: \nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "examples/collected_urls.txt",
+      "parameter": "order_id",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'order_id'",
+      "sources": [
+        "archive"
+      ],
+      "evidence": [
+        {
+          "kind": "archive",
+          "origin": "examples/collected_urls.txt",
+          "detail": "query string in archived URL (line 27)",
+          "context": "{\"url\": \"https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]\", \"status\": 200}",
+          "line": null,
+          "confidence": 0.85,
+          "target": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]"
+        }
+      ],
+      "discovery_confidence": 0.4,
+      "discovery_reasons": [
+        "present in a user-supplied URL archive",
+        "combined provenance weight 0.40 = 0.40",
+        "'order_id' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.40 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [],
+      "form_methods": [],
+      "reproduction": "GET examples/collected_urls.txt HTTP/1.1\nHost: \nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "examples/collected_urls.txt",
+      "parameter": "tenant",
+      "category": "resource_identifier",
+      "category_reason": "exact name match 'tenant'",
+      "sources": [
+        "archive"
+      ],
+      "evidence": [
+        {
+          "kind": "archive",
+          "origin": "examples/collected_urls.txt",
+          "detail": "query string in archived URL (line 28)",
+          "context": "{\"url\": \"https://app.example.test/api/v2/items?cursor=abc&tenant=acme\", \"status\": 200}",
+          "line": null,
+          "confidence": 0.85,
+          "target": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme"
+        }
+      ],
+      "discovery_confidence": 0.4,
+      "discovery_reasons": [
+        "present in a user-supplied URL archive",
+        "combined provenance weight 0.40 = 0.40",
+        "'tenant' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.40 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Resource identifier' naming weight 0.75 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [],
+      "form_methods": [],
+      "reproduction": "GET examples/collected_urls.txt HTTP/1.1\nHost: \nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/legacy/index.asp",
+      "parameter": "Category",
+      "category": "search_filtering",
+      "category_reason": "exact name match 'Category'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/legacy/index.asp?ID=7&Category=books",
+          "detail": "Category=books",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/legacy/index.asp?ID=7&Category=books"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'Category' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Search / filtering' naming weight 0.40 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "books"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /legacy/index.asp HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/search",
+      "parameter": "filter",
+      "category": "search_filtering",
+      "category_reason": "exact name match 'filter'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=&filter=instock",
+          "detail": "filter=instock",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=&filter=instock"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'filter' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Search / filtering' naming weight 0.40 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "instock"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /search HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/search",
+      "parameter": "q",
+      "category": "search_filtering",
+      "category_reason": "exact name match 'q'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=widgets&sort=asc",
+          "detail": "q=widgets",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=widgets&sort=asc"
+        },
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=&filter=instock",
+          "detail": "q=",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=&filter=instock"
+        },
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=widgets&q=gadgets",
+          "detail": "q=widgets",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=widgets&q=gadgets"
+        },
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=widgets&q=gadgets",
+          "detail": "q=gadgets",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=widgets&q=gadgets"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "4 independent observations",
+        "'q' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Search / filtering' naming weight 0.40 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "widgets",
+        ""
+      ],
+      "form_methods": [],
+      "reproduction": "GET /search HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/search",
+      "parameter": "sort",
+      "category": "search_filtering",
+      "category_reason": "exact name match 'sort'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/search?q=widgets&sort=asc",
+          "detail": "sort=asc",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/search?q=widgets&sort=asc"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'sort' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 35,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Search / filtering' naming weight 0.40 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "asc"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /search HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/api/export",
+      "parameter": "columns",
+      "category": "unknown_general",
+      "category_reason": "no known naming pattern for 'columns'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/api/export?format=csv&columns=all&debug=1",
+          "detail": "columns=all",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/api/export?format=csv&columns=all&debug=1"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'columns' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 34,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Unknown / general purpose' naming weight 0.25 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "parameter name carries no known intent signal",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "all"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /api/export HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/api/export",
+      "parameter": "format",
+      "category": "unknown_general",
+      "category_reason": "no known naming pattern for 'format'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/api/export?format=csv&columns=all&debug=1",
+          "detail": "format=csv",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/api/export?format=csv&columns=all&debug=1"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'format' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 34,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Unknown / general purpose' naming weight 0.25 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "parameter name carries no known intent signal",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "csv"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /api/export HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/profile",
+      "parameter": "note",
+      "category": "unknown_general",
+      "category_reason": "no known naming pattern for 'note'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/profile?note=hello&theme=dark",
+          "detail": "note=hello",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/profile?note=hello&theme=dark"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'note' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 34,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Unknown / general purpose' naming weight 0.25 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "parameter name carries no known intent signal",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "hello"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /profile HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/account/orders",
+      "parameter": "page",
+      "category": "pagination",
+      "category_reason": "exact name match 'page'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25",
+          "detail": "page=2",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'page' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 33,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Pagination' naming weight 0.20 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "2"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /account/orders HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/account/orders",
+      "parameter": "per_page",
+      "category": "pagination",
+      "category_reason": "exact name match 'per_page'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25",
+          "detail": "per_page=25",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/account/orders?user_id=88&page=2&per_page=25"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'per_page' appears on 1 of 12 endpoints (rare)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 33,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.92 x weight 0.18",
+        "category 'Pagination' naming weight 0.20 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "25"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /account/orders HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "https://app.example.test/api/v2/items",
+      "parameter": "cursor",
+      "category": "pagination",
+      "category_reason": "exact name match 'cursor'",
+      "sources": [
+        "url_query"
+      ],
+      "evidence": [
+        {
+          "kind": "url_query",
+          "origin": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme",
+          "detail": "cursor=abc",
+          "context": "supplied URL query string",
+          "line": null,
+          "confidence": 0.95,
+          "target": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme"
+        }
+      ],
+      "discovery_confidence": 0.5,
+      "discovery_reasons": [
+        "parameter observed in a real query string on this endpoint",
+        "combined provenance weight 0.50 = 0.50",
+        "'cursor' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 31,
+      "priority_reasons": [
+        "discovery confidence 0.50 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Pagination' naming weight 0.20 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [
+        "abc"
+      ],
+      "form_methods": [],
+      "reproduction": "GET /api/v2/items HTTP/1.1\nHost: app.example.test\nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    },
+    {
+      "endpoint": "examples/collected_urls.txt",
+      "parameter": "cursor",
+      "category": "pagination",
+      "category_reason": "exact name match 'cursor'",
+      "sources": [
+        "archive"
+      ],
+      "evidence": [
+        {
+          "kind": "archive",
+          "origin": "examples/collected_urls.txt",
+          "detail": "query string in archived URL (line 28)",
+          "context": "{\"url\": \"https://app.example.test/api/v2/items?cursor=abc&tenant=acme\", \"status\": 200}",
+          "line": null,
+          "confidence": 0.85,
+          "target": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme"
+        }
+      ],
+      "discovery_confidence": 0.4,
+      "discovery_reasons": [
+        "present in a user-supplied URL archive",
+        "combined provenance weight 0.40 = 0.40",
+        "'cursor' appears on 2 of 12 endpoints (common)"
+      ],
+      "behavioral": null,
+      "behavioral_confidence": 0.0,
+      "review_priority": 29,
+      "priority_reasons": [
+        "discovery confidence 0.40 x weight 0.28",
+        "behavioral confidence 0.00 x weight 0.34",
+        "rarity 0.83 x weight 0.18",
+        "category 'Pagination' naming weight 0.20 x weight 0.12",
+        "canary reflection no x weight 0.08",
+        "no repeatable behavioural change observed - this is a discovery, not a vulnerability",
+        "priority is a triage ordering only; it is not a vulnerability severity"
+      ],
+      "status": "discovered",
+      "observed_values": [],
+      "form_methods": [],
+      "reproduction": "GET examples/collected_urls.txt HTTP/1.1\nHost: \nUser-Agent: ParamScout/0.1.0 (authorized security testing; passive-first parameter discovery)\nAccept: */*\n\n# Replay only against targets you are authorized to test.",
+      "errors": [],
+      "inconclusive": false
+    }
+  ],
+  "limitations": [
+    "offline mode: only parameters already present in the supplied URLs/files were considered"
+  ],
+  "warnings": [
+    "no scope configured: running fully offline, no network requests are possible in this mode"
+  ],
+  "passive": {
+    "endpoints": 12,
+    "candidates": 27,
+    "forms": [],
+    "notes": [
+      "archive 'examples/collected_urls.txt' contributed 4 parameter observations",
+      "offline mode: no HTTP requests were made"
+    ]
+  }
+}

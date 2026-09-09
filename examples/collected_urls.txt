@@ -1,0 +1,28 @@
+# Example URL collection for offline analysis.
+#
+#   paramscout extract --input examples/collected_urls.txt --output passive.json
+#
+# Supported line formats (auto-detected per line):
+#   * a bare URL
+#   * URL<TAB>metadata            (gau / wayback / proxycrawl style dumps)
+#   * {"url": "..."}              (JSON lines, Burp-style exports)
+# Blank lines and '#' comments are ignored.
+#
+# Note how the same endpoint appears with repeated, blank and percent-encoded
+# parameters: ParamScout preserves all three instead of "normalising" them away.
+
+https://app.example.test/search?q=widgets&sort=asc
+https://app.example.test/search?q=&filter=instock
+https://app.example.test/search?q=widgets&q=gadgets
+https://app.example.test/product?id=1042
+https://app.example.test/product?id=
+https://app.example.test/files/download?file=report-2024.pdf&token=[REDACTED]
+https://app.example.test/profile?note=hello&theme=dark
+https://app.example.test/account/orders?user_id=88&page=2&per_page=25
+https://app.example.test/docs/view?path=%2Fprivate%2Fnotes.md
+https://app.example.test/redirect?next=%2Fdashboard&session=[REDACTED]
+https://app.example.test/api/export?format=csv&columns=all&debug=1
+https://app.example.test/legacy/index.asp?ID=7&Category=books
+https://app.example.test/	2024-03-11	text/html	200
+{"url": "https://app.example.test/checkout/confirm?order_id=9001&code=[REDACTED]", "status": 200}
+{"url": "https://app.example.test/api/v2/items?cursor=abc&tenant=acme", "status": 200}

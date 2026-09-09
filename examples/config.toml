@@ -1,0 +1,57 @@
+# Example ParamScout configuration.
+#
+#   paramscout scan --config examples/config.toml --url https://app.example.test --dry-run
+#
+# Precedence: built-in defaults < this file < CLI flags. A flag you did not
+# pass leaves the value from this file untouched.
+
+[scope]
+hosts = ["app.example.test", ".example-cdn.test"]
+include_subdomains = false
+allow_paths = []                 # empty = every path on an allowed host
+deny_paths = ["^/logout", "^/account/delete"]
+# Loopback/private/link-local targets are refused unless you opt in. Needed for
+# local test applications; leave it false when testing anything remote.
+allow_private_networks = false
+
+[request]
+# rate and concurrency are PER HOST by default. The global caps below are
+# always enforced on top, so aggregate traffic stays bounded either way.
+rate = 2.0
+rate_scope = "host"              # "host" | "global"
+concurrency = 2
+concurrency_scope = "host"       # "host" | "global"
+global_rate = 5.0
+global_concurrency = 4
+timeout = 15.0
+retries = 2
+max_redirects = 5
+max_response_bytes = 2000000
+max_url_length = 2000
+max_requests = 500               # global request budget
+max_requests_per_endpoint = 40   # per-endpoint request budget
+verify_tls = true                # leave on; only disable for authorized internal hosts
+
+[crawl]
+depth = 2
+max_pages = 100
+max_js_files = 20
+max_js_bytes = 500000
+extract_js = true
+fetch_external_js = true
+fetch_robots = true
+fetch_sitemap = true
+
+[active]
+enabled = false                  # active discovery is always opt-in via --active
+baselines = 3                    # unchanged responses used to measure noise
+confirmations = 2                # re-tests required before a change is reported
+batch_size = 1                   # >1 probes several parameters per request
+max_candidates_per_endpoint = 60
+max_active_endpoints = 25
+# Regexes for endpoints that must never be probed. These extend the built-in
+# defaults rather than replacing them.
+excluded_paths = ["^/checkout", "^/payment/"]
+
+[output]
+endpoint_grouping = "strict"     # strict | ignore-trailing-slash | case-folded-path | origin-only
