@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paramscout"
+version = "0.1.0"
+description = "A Python-based URL parameter discovery and analysis tool for authorized bug bounty hunting."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["security", "bug-bounty", "parameters", "url", "recon", "httpx"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Typing :: Typed",
+]
+authors = [
+    { name = "Mrdineshpathro", email = "mrdineshpathro@gmail.com" }
+]
+dependencies = [
+    "httpx>=0.26,<1",
+    "beautifulsoup4>=4.12",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+]
+
+[project.urls]
+"Support" = "https://buymeacoffee.com/mrdineshpathro"
+
+[project.scripts]
+paramscout = "paramscout.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["paramscout*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["tests"]
+asyncio_mode = "auto"

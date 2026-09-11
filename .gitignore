@@ -1,0 +1,53 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# Virtual environments / local environments
+.venv/
+venv/
+env/
+.env
+ENV/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Credentials and secrets — never commit
+*.pem
+*.key
+*.crt
+id_rsa
+id_ed25519
+*.p12
+.credentials
+secrets.*
+*cookies*.env
+
+# Scan databases and generated reports — never commit
+*.sqlite
+*.sqlite3
+*.db
+*.jsonl
+reports/
+output/
+findings.*
+scan_state.*
+*.log
+
+# Local config overrides
+paramscout.local.toml
+
+# Editor noise
+.idea/
+.vscode/
+*.swp
+.DS_Store

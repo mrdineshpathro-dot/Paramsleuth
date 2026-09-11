@@ -1,0 +1,17 @@
+# Example scope file for `paramscout scan --scope-file ...`
+# Authorized targets only! These are RFC 2606 reserved example domains.
+#
+# Syntax:
+#   app.example.test          allow a host (optionally host:port, or host/path-prefix)
+#   *.static.example.test     allow subdomains (the bare apex is not included)
+#   -host staging.app...      deny a host (deny always wins over allow)
+#   +path /api                require a path prefix for every allowed URL
+#   -path /api/admin          exclude a path prefix
+# Lines starting with '#' and blank lines are ignored.
+
+app.example.test
+*.static.example.test
+
+-path /admin
+-path /internal
+-host staging.app.example.test
